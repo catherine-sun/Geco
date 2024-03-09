@@ -11,23 +11,23 @@ function Links() {
                 <Text>https://www.toronto.ca/services-payments/recycling-organics-garbage/houses/what-goes-in-my-green-bin/)</Text>
             </View>
 
-            <Pressable onPress={() => router.replace("/Homepage")}>
+            <Pressable onPress={() => router.replace("./Homepage")}>
                 <Text >Homepage</Text>
             </Pressable>
 
-            <Pressable onPress={() => router.replace("/Scanner")}>
+            <Pressable onPress={() => router.replace("./Scanner")}>
                 <Text >Scanner</Text>
             </Pressable>
 
-            <Pressable onPress={() => router.replace("/Inventory")}>
+            <Pressable onPress={() => router.replace("./Inventory")}>
                 <Text >Inventory</Text>
             </Pressable>
 
-            <Pressable onPress={() => router.replace("/ManualInput")}>
+            <Pressable onPress={() => router.replace("./ManualInput")}>
                 <Text >Manual Input</Text>
             </Pressable>
 
-            <Pressable onPress={() => router.replace("/About")}>
+            <Pressable onPress={() => router.replace("./About")}>
                 <Text >About Us</Text>
             </Pressable>
 

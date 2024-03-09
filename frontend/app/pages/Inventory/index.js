@@ -10,23 +10,23 @@ function Inventory() {
                 <Text>How much gar-bahj have you scanned that contributes to the death of this planet?</Text>
             </View>
 
-            <Pressable onPress={() => router.replace("/Homepage")}>
+            <Pressable onPress={() => router.replace("./Homepage")}>
                 <Text >Homepage</Text>
             </Pressable>
 
-            <Pressable onPress={() => router.replace("/Scanner")}>
+            <Pressable onPress={() => router.replace("./Scanner")}>
                 <Text >Scanner</Text>
             </Pressable>
 
-            <Pressable onPress={() => router.replace("/ManualInput")}>
+            <Pressable onPress={() => router.replace("./ManualInput")}>
                 <Text >Manual Input</Text>
             </Pressable>
 
-            <Pressable onPress={() => router.replace("/Links")}>
+            <Pressable onPress={() => router.replace("./Links")}>
                 <Text >Links</Text>
             </Pressable>
 
-            <Pressable onPress={() => router.replace("/About")}>
+            <Pressable onPress={() => router.replace("./About")}>
                 <Text >About Us</Text>
             </Pressable>
 

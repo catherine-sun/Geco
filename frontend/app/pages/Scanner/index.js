@@ -9,23 +9,23 @@ function Scanner() {
                 <Text>Make camera work good</Text>
             </View>
 
-            <Pressable onPress={() => router.replace("/Homepage")}>
+            <Pressable onPress={() => router.replace("./Homepage")}>
                 <Text >Homepage</Text>
             </Pressable>
 
-            <Pressable onPress={() => router.replace("/Inventory")}>
+            <Pressable onPress={() => router.replace("./Inventory")}>
                 <Text >Inventory</Text>
             </Pressable>
 
-            <Pressable onPress={() => router.replace("/ManualInput")}>
+            <Pressable onPress={() => router.replace("./ManualInput")}>
                 <Text >Manual Input</Text>
             </Pressable>
 
-            <Pressable onPress={() => router.replace("/Links")}>
+            <Pressable onPress={() => router.replace("./Links")}>
                 <Text >Links</Text>
             </Pressable>
 
-            <Pressable onPress={() => router.replace("/About")}>
+            <Pressable onPress={() => router.replace("./About")}>
                 <Text >About Us</Text>
             </Pressable>
 
