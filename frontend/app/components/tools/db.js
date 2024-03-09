@@ -27,3 +27,19 @@ export const getData = async (
         onError();
     }
 }
+
+export const updateData = async (
+    key,
+    item, 
+    onError = () => {}
+) => {
+    try {
+        await AsyncStorage.mergeItem(
+            key,
+            item,
+            onError
+        )
+    } catch (e) {
+        onError();
+    }
+}
