@@ -70,7 +70,11 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: 'white',
-    padding: 10,
+    // padding: 10,
+    position: 'absolute',
+    width: 200,
+    bottom: '15%',
+    right: '1%'
   },
   actionButtonIcon: {
     fontSize: 20,
