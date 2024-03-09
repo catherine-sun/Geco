@@ -8,7 +8,7 @@ export const storeData = async (
     try {
         await AsyncStorage.setItem(
             key,
-            item,
+            JSON.stringify(item),
             onError
         )
     } catch (e) {
@@ -22,7 +22,7 @@ export const getData = async (
 ) => {
     try {
         const item = await AsyncStorage.getItem(key, onError)
-        return item;
+        return JSON.parse(item);
     } catch (e) {
         onError();
     }
