@@ -1,11 +1,9 @@
 
 import React from 'react';
-import { SafeAreaView, StyleSheet, Text } from 'react-native';
+import { SafeAreaView, Text } from 'react-native';
 
 import DisplayButtons from '../../components/DisplayButtons';
-//import styles from './styles';
-
-
+import { styles } from './styles';
 
 
 function Homepage() {
@@ -24,18 +22,3 @@ function Homepage() {
 
 }
 export default Homepage;
-
-
-const styles = StyleSheet.create({
-    container: {
-      flex: 1,
-      backgroundColor: 'white',
-      padding: 10,
-    },
-    titleStyle: {
-      fontSize: 28,
-      fontWeight: 'bold',
-      textAlign: 'center',
-      padding: 10,
-    },
-  });

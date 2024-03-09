@@ -1,8 +1,9 @@
 import React from 'react';
-import { StyleSheet, Text, SafeAreaView, Button} from 'react-native';
+import { Text, SafeAreaView, Button} from 'react-native';
 import { openBrowserAsync} from 'expo-web-browser';
 
 import DisplayButtons from '../../components/DisplayButtons';
+import { styles } from './styles';
 
 function Links() {
 
@@ -32,27 +33,3 @@ function Links() {
 
 }
 export default Links;
-
-const styles = StyleSheet.create({
-    container: {
-      flex: 1,
-      backgroundColor: 'white',
-      padding: 10,
-    },
-    titleStyle: {
-      fontSize: 28,
-      fontWeight: 'bold',
-      textAlign: 'center',
-      padding: 10,
-    },
-    textStyle: {
-      fontSize: 16,
-      textAlign: 'center',
-      padding: 10,
-    },
-    actionButtonIcon: {
-      fontSize: 20,
-      height: 22,
-      color: 'white',
-    },
-  });
