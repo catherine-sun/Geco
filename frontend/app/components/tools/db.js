@@ -43,3 +43,17 @@ export const updateData = async (
         onError();
     }
 }
+
+export const deleteData = async (
+    key, 
+    onError = () => {}
+) => {
+    try {
+        await AsyncStorage.removeItem(
+            key,
+            onError
+        )
+    } catch (e) {
+        onError();
+    }
+}
