@@ -1,6 +1,7 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View, Pressable } from 'react-native';
 import { router } from 'expo-router';
+import TrackedGraphs from '../../components/TrackedGraphs';
 
 function Homepage() {
     return (
@@ -29,6 +30,7 @@ function Homepage() {
                 <Text >About Us</Text>
             </Pressable>
 
+            <TrackedGraphs/>
         </View>
     )
 
