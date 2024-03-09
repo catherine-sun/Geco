@@ -1,36 +1,35 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View, Pressable } from 'react-native';
-import { router } from 'expo-router';
+import React from 'react';
+import { StyleSheet, Text, SafeAreaView} from 'react-native';
+
+import DisplayButtons from '../../components/DisplayButtons';
 
 function ManualInput() {
+
     return (
-        <View>
-            <View>
-                <Text>Put in the data yourself</Text>
-            </View>
+        <SafeAreaView style={styles.container}>
 
-            <Pressable onPress={() => router.replace("./Homepage")}>
-                <Text >Homepage</Text>
-            </Pressable>
+            <Text style={styles.titleStyle}>
+                Do it yourself bar
+            </Text>
 
-            <Pressable onPress={() => router.replace("./Scanner")}>
-                <Text >Scanner</Text>
-            </Pressable>
 
-            <Pressable onPress={() => router.replace("./Inventory")}>
-                <Text >Inventory</Text>
-            </Pressable>
+            <DisplayButtons currentPath='ManualInput' />
 
-            <Pressable onPress={() => router.replace("./Links")}>
-                <Text >Links</Text>
-            </Pressable>
-
-            <Pressable onPress={() => router.replace("./About")}>
-                <Text >About Us</Text>
-            </Pressable>
-
-        </View>
+        </SafeAreaView>
     )
-
 }
 export default ManualInput;
+
+const styles = StyleSheet.create({
+    container: {
+      flex: 1,
+      backgroundColor: 'white',
+      padding: 10,
+    },
+    titleStyle: {
+      fontSize: 28,
+      fontWeight: 'bold',
+      textAlign: 'center',
+      padding: 10,
+    },
+  });
