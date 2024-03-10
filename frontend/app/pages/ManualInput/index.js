@@ -1,5 +1,5 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View, Pressable, TextInput, Button, TouchableWithoutFeedback, ScrollView, SafeAreaView } from 'react-native';
+import { StyleSheet, Text, View, Pressable, TextInput, Button, ScrollView, SafeAreaView } from 'react-native';
 import { router } from 'expo-router';
 import { useEffect, useState } from 'react';
 import * as tools from '../../components/tools/db';
@@ -102,7 +102,7 @@ function ManualInput() {
                     <Text style={styles.header}>Select Bin</Text>
 
                     <View style={styles.buttonContainer}>
-                        
+
                         <FontAwesome.Button onPress={() => setWaste('Trash')} style={waste === 'Trash' ? styles.selectedButton : styles.button} name={waste === 'Trash' ? 'check' :"trash"} backgroundColor="gray">
                             Trash
                         </FontAwesome.Button>
@@ -136,7 +136,7 @@ function ManualInput() {
                     </Picker>
 
                     <Text style={styles.header}>Date</Text>
-                    <Button onPress={() => setShow(true)} title="Show date picker!" />
+                    <Button onPress={() => setShow(true)} title="Select date" color={'#013669'}/>
                     {show && (<DateTimePicker
                         testID="dateTimePicker"
                         value={date}
@@ -146,8 +146,16 @@ function ManualInput() {
                     />)}
 
                     <View style={styles.saveButtonContainer}>
-                        <Button style={styles.saveButton} title="Save And Add Another" onPress={() => { saveData(date, waste, number, selectedSize); setSaved(true); }} />
-                        <Button style={styles.saveButton} title="Save" onPress={() => { saveData(date, waste, number, selectedSize); router.replace("./Homepage") }} />
+                        <Button
+                            style={styles.saveButton}
+                            color={'#3299ad'}
+                            onPress={() => { saveData(date, waste, number, selectedSize); setSaved(true); }}
+                            title="Save And Add Another" />
+                        <Button
+                            style={styles.saveButton}
+                            color={'#3299ad'}
+                            onPress={() => { saveData(date, waste, number, selectedSize); router.replace("./Homepage") }}
+                                title="Save" />
                     </View>
                 </View>
             </ScrollView>
@@ -168,17 +176,19 @@ const styles = StyleSheet.create({
         backgroundColor: '#fff',
         alignItems: 'center',
         justifyContent: 'center',
+        height: 'auto',
     },
     header: {
         fontSize: 25,
         height: 50,
-        marginTop: 20
+        marginTop: 20,
     },
     buttonContainer: {
         flexDirection: 'row',
         dispay: 'flex',
         justifyContent: 'space-evenly',
         height: 100,
+        width: 400,
     },
     button: {
         // margin: 30,
@@ -187,20 +197,29 @@ const styles = StyleSheet.create({
         height: 100,
         // margin: 10,
         width: 100,
+        flexDirection: 'column',
+        justifyContent: 'center',
+        marginLeft: 2,
+        marginRight: 2,
     },
     selectedButton: {
         marginHorizontal: 15,
         textAlign: 'center',
         height: 100,
         width: 100,
-        opacity: 0.5
+        flexDirection: 'column',
+        justifyContent: 'center',
+        opacity: 0.5,
+        marginLeft: 2,
+        marginRight: 2,
     },
     picker: {
         fontSize: 20,
         top: -40,
         zIndex: 0,
-        height: 150,
-        width: 500
+        height: 50,
+        width: 200,
+        marginTop: 50,
     },
     datePicker: {
         borderColor: 'black',
@@ -208,14 +227,22 @@ const styles = StyleSheet.create({
         height: 50
     },
     saveButtonContainer: {
-        marginTop: 30,
+        marginTop: 45,
         width: '80%',
         flexDirection: 'row',
         display: 'flex',
-        justifyContent: 'space-between'
+        justifyContent: 'space-between',
+        textAlign: 'center',
     },
     saveButton: {
-        width: 10
+        width: 150,
+        borderRadius: 20,
+        borderWidth: 1,
+        borderColor: '#013669',
+        backgroundColor: 'green',
+        borderRadius: 5,
+        textAlign: 'center',
+        alignContent: 'center',
     }
 });
 
