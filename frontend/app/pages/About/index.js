@@ -7,10 +7,10 @@ function About() {
 
     return (
         <SafeAreaView style={styles.container}>
+            <ScrollView style={styles.scroll}>
             <View style={{display: "flex", alignItems: "center", justifyContent: "center"}}>
                 <Image style={{height: 50, width: 100, objectFit: "contain"}} source={require('../../../assets/geco_logo.jpg')}/>
             </View>
-            <ScrollView style={styles.scroll}>
                 <Text style={{
                     fontSize: 38,
                     fontWeight: 'bold',
