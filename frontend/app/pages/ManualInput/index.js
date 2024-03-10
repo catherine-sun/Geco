@@ -91,7 +91,7 @@ function ManualInput() {
     }, [waste])
 
     return (
-      <SafeAreaView>
+      <SafeAreaView style={styles.container}>
 
         <View style={styles.body}>
             <ScrollView>
