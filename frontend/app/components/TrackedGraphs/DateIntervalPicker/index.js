@@ -17,16 +17,16 @@ const DateIntervalPicker = ({startDate, endDate, setStartDate, setEndDate}) => {
             <Text style={styles.header}>Visualizations</Text>
             <View style={styles.selectors}>
                 <Pressable onPress={() => { setStartDateOpen(true); setEndDateOpen(false)}}>
-                    <Text style={styles.btn} >From   
-                    <Text style={styles.btnDate}> { startDate}</Text></Text>
+                    <Text style={styles.btn} >From
+                    <Text style={styles.btnDate}> { startDate }</Text></Text>
                 </Pressable>
                 <Pressable onPress={() => { setEndDateOpen(true); setStartDateOpen(false)}}>
-                <Text style={styles.btn} > to 
-                    <Text style={styles.btnDate}> {endDate}</Text></Text>                
+                <Text style={styles.btn} > to
+                    <Text style={styles.btnDate}> { endDate}</Text></Text>
                 </Pressable>
             </View>
             {
-                startDateOpen && 
+                startDateOpen &&
                 <Modal
                     style={styles.picker}
                     transparent={true}
@@ -36,9 +36,9 @@ const DateIntervalPicker = ({startDate, endDate, setStartDate, setEndDate}) => {
                 >
                 <View style={styles.pickerView}>
                     <Text style={styles.pickerHeader}>Select the start date of the interval</Text>
-                    <DateTimePicker 
+                    <DateTimePicker
                         date={startDateVal}
-                        onChange={(startDate) => { 
+                        onChange={(startDate) => {
                             if (startDate.date) {
                                 setStartDate(dayjs(startDate.date).format("YYYY-MM-DD"))
                                 console.log(startDate)
@@ -63,21 +63,21 @@ const DateIntervalPicker = ({startDate, endDate, setStartDate, setEndDate}) => {
                 >
                     <View style={styles.pickerView}>
                         <Text style={styles.pickerHeader}>Select the end date of the interval</Text>
-                        <DateTimePicker 
+                        <DateTimePicker
                             date={endDateVal}
                             onChange={(endDate) => {
                                 if (endDate.date) {
                                     setEndDateVal(endDate.date)
                                     setEndDate(dayjs(endDate.date).format("YYYY-MM-DD"))
                                     setEndDateOpen(false)
-                                }                    
+                                }
                             }}
                             mode="single"
                         />
                     </View>
                 </Modal>
             }
-        
+
         </View>
     )
 }

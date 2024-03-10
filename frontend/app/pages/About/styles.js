@@ -6,6 +6,9 @@ export const styles = StyleSheet.create({
       backgroundColor: 'white',
       padding: 10,
     },
+    scroll: {
+      flex: 30,
+    },
     titleStyle: {
       fontSize: 28,
       fontWeight: 'bold',

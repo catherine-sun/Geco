@@ -67,14 +67,18 @@ function DisplayButtons({currentPath}) {
 export default DisplayButtons;
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: 'white',
-    padding: 10,
-  },
-  actionButtonIcon: {
-    fontSize: 20,
-    height: 22,
-    color: 'white',
-  },
-});
+    container: {
+      flex: 1,
+      backgroundColor: 'white',
+      // padding: 10,
+      position: 'absolute',
+      width: 200,
+      bottom: '15%',
+      right: '1%'
+    },
+    actionButtonIcon: {
+      fontSize: 20,
+      height: 22,
+      color: 'white',
+    },
+  });

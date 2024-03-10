@@ -11,7 +11,9 @@ const styles = StyleSheet.create({
     selectors: {
         display: "flex",
         flexDirection: "row",
-        marginRight: -5
+        marginRight: -5,
+
+
     },
     btn: {
         fontSize: 16,
@@ -49,7 +51,7 @@ const styles = StyleSheet.create({
     },
     pickerHeader: {
         fontWeight: "600"
-    }
+    },
 })
 
 export default styles;
