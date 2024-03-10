@@ -13,10 +13,10 @@ function Homepage() {
 
     return(
         <SafeAreaView style={styles.container}>
-            <ScrollView style={styles.container}>
+            <ScrollView style={styles.scrollContainer}>
                 <HomepageCalendar />
+                <TrackedGraphs/>
             </ScrollView>
-            <TrackedGraphs/>
         <DisplayButtons currentPath='Homepage' />
         </SafeAreaView>
     )
