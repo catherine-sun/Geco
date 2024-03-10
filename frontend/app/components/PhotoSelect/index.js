@@ -1,11 +1,13 @@
 import * as ImagePicker from "expo-image-picker"
-import { View, Pressable, Text, Image } from "react-native"
+import { View, Pressable, Text, Image, Alert } from "react-native"
 import EntypoIcon from "react-native-vector-icons/Entypo"
 import FAIcon from "react-native-vector-icons/FontAwesome6"
 
 import styles from "./styles"
 
 const PhotoSelect = ({image, setImage, onSelect}) => {
+
+    const [cameraStatus, requestCameraPermissions] = ImagePicker.useCameraPermissions()
 
     const uploadPhoto = async () => {
         ImagePicker.launchImageLibraryAsync({
@@ -15,10 +17,20 @@ const PhotoSelect = ({image, setImage, onSelect}) => {
     }
 
     const takePhoto = async () => {
-        ImagePicker.launchCameraAsync({
-            mediaTypes: ImagePicker.MediaTypeOptions.All
-        }).then(res => !res.canceled && setImage(res.assets[0].uri))
-        .catch(e => console.log(e))
+        if (!cameraStatus.granted) {
+            const res = await requestCameraPermissions()
+            if (res.status == "denied") {
+                Alert.alert(
+                    "Missing Permissions",
+                    "This actions requires camera permissions. Please check your app settings and try again."
+                )
+            }
+        }
+        if (cameraStatus.granted)
+            ImagePicker.launchCameraAsync({
+                mediaTypes: ImagePicker.MediaTypeOptions.All
+            }).then(res => !res.canceled && setImage(res.assets[0].uri))
+            .catch(e => console.log(e))
     }
 
     return (
