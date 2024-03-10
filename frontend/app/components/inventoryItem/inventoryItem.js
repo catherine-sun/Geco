@@ -47,7 +47,7 @@ const styles = StyleSheet.create({
     display: 'flex',
     // width: '60vw',
     height: 50,
-    margin: 15
+    margin: 10,
   },
   containerBody: {
     flexDirection: 'row',

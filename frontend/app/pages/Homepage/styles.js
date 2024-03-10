@@ -5,7 +5,7 @@ export const styles = StyleSheet.create({
       flex: 1,
       padding: 10,
       display: "flex",
-      alignItems: "stretch"
+      alignItems: "stretch",
     },
     scrollContainer: {
       backgroundColor: 'white',
