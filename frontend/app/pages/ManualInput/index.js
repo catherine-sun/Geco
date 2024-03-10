@@ -99,10 +99,10 @@ function ManualInput() {
         <View style={styles.body}>
             <ScrollView>
                 <View style={styles.container}>
-                    <View style={{display: "flex", alignItems: "center", marginTop: 5, justifyContent: "center"}}>
+                    <View style={{display: "flex", alignItems: "center", marginTop: 12, justifyContent: "center"}}>
                         <Image style={{height: 50, width: 100, objectFit: "contain"}} source={require('../../../assets/geco_logo.jpg')}/>
                     </View>
-                    <Text style={{ fontWeight: "bold", fontSize: 30, marginTop: 5 }}>Log Disposed Bins</Text>
+                    <Text style={{ fontWeight: "bold", fontSize: 30, marginTop: 7 }}>Log Disposed Bins</Text>
                     <Text style={styles.header}>Select Bin</Text>
 
                     <View style={styles.buttonContainer}>
