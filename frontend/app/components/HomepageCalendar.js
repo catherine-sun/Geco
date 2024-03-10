@@ -27,11 +27,12 @@ function HomepageCalendar() {
             ])
             setBags(await tools.getData("bags"));
         }
-        storeData();
+        // storeData();
 
         async function getData() {
             await tools.getData("bags")
             setBags(await tools.getData("bags"));
+            console.log('bags here', await tools.getData("bags"))
         }
         getData();
 
