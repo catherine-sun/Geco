@@ -1,0 +1,13 @@
+version: '3.8'
+
+services:
+    geco-tf:
+        build:
+            context: .
+        ports:
+            - 8000:80
+        volumes:
+            - ./app:/app
+        environment:
+            APP_PATH: /app
+        working_dir: /app
