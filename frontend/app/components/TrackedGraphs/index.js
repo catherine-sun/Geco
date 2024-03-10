@@ -1,4 +1,4 @@
-import { View, Text, useWindowDimensions } from "react-native"
+import { View, Text, useWindowDimensions, SafeAreaView } from "react-native"
 import { useState, useEffect } from "react"
 import { disposalTypeToColour } from "../tools/graphs/tools"
 import LineGraph from "./LineGraph"
@@ -144,55 +144,57 @@ const TrackedGraphs = ({itemType = "bags"}) => {
     }, [fromDate, toDate])
 
     return (
-        <View style={styles.root}>
-            <View key="3434543636">
-                <DateIntervalPicker
-                    startDate={fromDate}
-                    setStartDate={setFromDate}
-                    endDate={toDate}
-                    setEndDate={setToDate}
-                />
-            </View>
-            {
-                pieChartData && pieChartData.length == 0 &&
-                (
-                    <View style={styles.noDataContainer}>
-                        <Text style={styles.noDataContainerText}>No data from {fromDate} to {toDate}. Select dates with logged entries to view your visualizations.</Text>
-                    </View>
-                )
-            }
-            {
-                pieChartData &&  pieChartData.length > 0 &&
-                    <View key="piechart" style={styles.graphContainer}>
-                        <PieChart
-                            key="pieChartComp"
-                            width={Math.min(width * 0.8, 400)}
-                            height={Math.min(width * 0.6, 400)}
-                            paddingHeight={30}
-                            paddingWidth={30}
-                            title={`${fromDate} to ${toDate}`}
-                            data={pieChartData}
-                        />
-                    </View>
-            }
-            {
-                lineGraphData && lineGraphData.length > 0 &&
-                <View key="linegraph" style={styles.graphContainer}>
-                    <LineGraph 
-                        width={Math.min(width * 0.82, 400)}
-                        height={Math.min(width * 0.5, 400)}
-                        title={`${fromDate} to ${toDate}`}
-                        paddingHeight={width * 0.08}
-                        paddingWidth={width * 0.1}
-                        xAxisLabel={""}
-                        yAxisLabel={""}
-                        xAxisType={"date"}
-                        data={lineGraphData}
+        <SafeAreaView style={styles.root}>
+            <View>
+                <View key="3434543636">
+                    <DateIntervalPicker
+                        startDate={fromDate}
+                        setStartDate={setFromDate}
+                        endDate={toDate}
+                        setEndDate={setToDate}
                     />
                 </View>
-               
-            }
-        </View>
+                {
+                    pieChartData && pieChartData.length == 0 &&
+                    (
+                        <View style={styles.noDataContainer}>
+                            <Text style={styles.noDataContainerText}>No data from {fromDate} to {toDate}. Select dates with logged entries to view your visualizations.</Text>
+                        </View>
+                    )
+                }
+                {
+                    pieChartData &&  pieChartData.length > 0 &&
+                        <View key="piechart" style={styles.graphContainer}>
+                            <PieChart
+                                key="pieChartComp"
+                                width={Math.min(width * 0.8, 400)}
+                                height={Math.min(width * 0.6, 400)}
+                                paddingHeight={30}
+                                paddingWidth={30}
+                                title={`${fromDate} to ${toDate}`}
+                                data={pieChartData}
+                            />
+                        </View>
+                }
+                {
+                    lineGraphData && lineGraphData.length > 0 &&
+                    <View key="linegraph" style={styles.graphContainer}>
+                        <LineGraph 
+                            width={Math.min(width * 0.82, 400)}
+                            height={Math.min(width * 0.5, 400)}
+                            title={`${fromDate} to ${toDate}`}
+                            paddingHeight={width * 0.08}
+                            paddingWidth={width * 0.1}
+                            xAxisLabel={""}
+                            yAxisLabel={""}
+                            xAxisType={"date"}
+                            data={lineGraphData}
+                        />
+                    </View>
+                
+                }
+            </View>
+        </SafeAreaView>
     )
 }
 
