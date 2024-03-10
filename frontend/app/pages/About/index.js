@@ -1,16 +1,17 @@
-import React from 'react';
-import { Text, SafeAreaView} from 'react-native';
-
+import { StatusBar } from 'expo-status-bar';
+import { StyleSheet, SafeAreaView,  Text, View, Image } from 'react-native';
+import { router } from 'expo-router';
 import DisplayButtons from '../../components/DisplayButtons';
-import { styles } from './styles';
 
 function About() {
 
     return (
         <SafeAreaView style={styles.container}>
-
+            <View style={{display: "flex", alignItems: "center", justifyContent: "center"}}>
+                <Image style={{height: 50, width: 100, objectFit: "contain"}} source={require('../../../assets/geco_logo.jpg')}/>
+            </View>
             <Text style={styles.titleStyle}>
-                Listen to us toot our own horns.
+                About GECO
             </Text>
             <Text style={styles.titleStyle}>
                 Here's why we're morally superior to you
@@ -36,3 +37,27 @@ function About() {
 
 }
 export default About;
+
+const styles = StyleSheet.create({
+    container: {
+      flex: 1,
+      backgroundColor: 'white',
+      padding: 10,
+    },
+    titleStyle: {
+      fontSize: 28,
+      fontWeight: 'bold',
+      textAlign: 'center',
+      padding: 10,
+    },
+    textStyle: {
+      fontSize: 16,
+      textAlign: 'center',
+      padding: 10,
+    },
+    actionButtonIcon: {
+      fontSize: 20,
+      height: 22,
+      color: 'white',
+    },
+  });

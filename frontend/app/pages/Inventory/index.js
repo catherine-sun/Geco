@@ -1,5 +1,5 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View, Pressable, ScrollView, SafeAreaView } from 'react-native';
+import { StyleSheet, Text, View, Image, ScrollView, SafeAreaView } from 'react-native';
 import { router } from 'expo-router';
 import InventoryItem from '../../components/inventoryItem/inventoryItem';
 import * as tools from '../../components/tools/db';
@@ -59,6 +59,9 @@ const Inventory = () => {
     return (
         <SafeAreaView style={styles.container}>
             <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center', overflow: 'hidden' }}>
+                <View style={{display: "flex", alignItems: "center", justifyContent: "center"}}>
+                    <Image style={{height: 50, width: 100, objectFit: "contain"}} source={require('../../../assets/geco_logo.jpg')}/>
+                </View>
                 <Text style={{ marginTop:10,fontSize: 30, fontWeight: "bold" }}>Inventory</Text>
                 <ScrollView style={{ width: '100%', overflowY: 'scroll', boxSizing: 'content-box' }}>
                     {/* <Text>How much gar-bahj have you scanned that contributes to the death of this planet?</Text> */}

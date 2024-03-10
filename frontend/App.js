@@ -1,5 +1,5 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Image, View } from 'react-native';
 
 export default function App() {
   return (
@@ -17,4 +17,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
+  logo: {
+    height: 50, width: 100, objectFit: "contain"
+  }
 });

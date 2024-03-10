@@ -1,5 +1,5 @@
 import React from 'react';
-import { Text, SafeAreaView, View,} from 'react-native';
+import { Text, SafeAreaView, View, Image} from 'react-native';
 import { useState } from "react"
 
 import DisplayButtons from '../../components/DisplayButtons';
@@ -11,7 +11,9 @@ function Scanner() {
 
     return (
         <SafeAreaView style={styles.container}>
-
+            <View style={{display: "flex", alignItems: "center", justifyContent: "center"}}>
+                <Image style={{height: 50, width: 100, objectFit: "contain"}} source={require('../../../assets/geco_logo.jpg')}/>
+            </View>
             <Text style={styles.titleStyle}>
                 Scan A Photo For Disposal Recommendations
             </Text>
