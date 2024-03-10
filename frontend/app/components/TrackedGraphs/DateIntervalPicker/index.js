@@ -17,11 +17,10 @@ const DateIntervalPicker = ({startDate, endDate, setStartDate, setEndDate}) => {
     
     return (
         <View style={styles.root}>
-            <Text style={styles.header}>Visualizations</Text>
             <View style={styles.selectors}>
                 <Pressable onPress={() => { setStartDateOpen(true); setEndDateOpen(false)}}>
                     <Text style={styles.btn} >From   
-                    <Text style={styles.btnDate}> { startDate}</Text></Text>
+                    <Text style={styles.btnDate}> {startDate}</Text></Text>
                 </Pressable>
                 <Pressable onPress={() => { setEndDateOpen(true); setStartDateOpen(false)}}>
                 <Text style={styles.btn} > to 

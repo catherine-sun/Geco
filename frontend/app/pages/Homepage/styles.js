@@ -17,4 +17,17 @@ export const styles = StyleSheet.create({
       textAlign: 'center',
       padding: 10,
     },
+    sectionHeader: {
+      fontWeight: "bold",
+      marginLeft: 10,
+      borderBottomWidth: 1,
+      borderBottomColor: "grey",
+      paddingBottom: 5
+    },
+    titleStyle: {
+      fontSize: 28,
+      fontWeight: 'bold',
+      textAlign: 'center',
+      padding: 10,
+    },
   });

@@ -20,7 +20,8 @@ const styles = StyleSheet.create({
     },
     btnDate: {
         borderBottomWidth: 1,
-        color: "grey",
+        borderBottomColor: "black",
+        color: "black",
         marginRight: 5,
         marginLeft: 5,
     },

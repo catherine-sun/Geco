@@ -171,7 +171,7 @@ const TrackedGraphs = ({itemType = "bags"}) => {
                                 height={Math.min(width * 0.6, 400)}
                                 paddingHeight={width * 0.08}
                                 paddingWidth={width * 0.1}
-                                title={`${fromDate} to ${toDate}`}
+                                title={`Overall bin type distribution`}
                                 data={pieChartData}
                             />
                         </View>
@@ -182,7 +182,7 @@ const TrackedGraphs = ({itemType = "bags"}) => {
                         <LineGraph 
                             width={Math.min(width * 0.9, 400)}
                             height={Math.min(width * 0.5, 400)}
-                            title={`${fromDate} to ${toDate}`}
+                            title={`Daily disposal trends`}
                             paddingHeight={width * 0.08}
                             paddingWidth={width * 0.1}
                             xAxisLabel={""}

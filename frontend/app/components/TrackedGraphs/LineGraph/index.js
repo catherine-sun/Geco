@@ -45,7 +45,7 @@ const LineGraph = ({
                         {/* xAxis */}
                         <Line
                             stroke={"#a6a6a6"}
-                            strokeWidth={3}
+                            strokeWidth={2}
                             x1={paddingWidth - 3}
                             y1={height - paddingHeight}
                             x2={width - paddingWidth}
@@ -66,7 +66,7 @@ const LineGraph = ({
                         {/* yAxis */}
                         <Line
                             stroke={"#a6a6a6"}
-                            strokeWidth={3}
+                            strokeWidth={2}
                             x1={paddingWidth - 3}
                             y1={paddingHeight}
                             x2={paddingWidth - 3}

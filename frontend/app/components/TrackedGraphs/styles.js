@@ -6,8 +6,8 @@ const styles = StyleSheet.create({
         flex: 1,
     },
     graphContainer: {
-        borderColor: "#D9D9D9",
-        borderWidth: 3,
+        borderColor: "grey",
+        borderWidth: 1,
         borderRadius: 15,
         marginTop: 10,
         width: "100%",

@@ -60,7 +60,7 @@ function HomepageCalendar() {
 
     const T = {
         key: "Trash",
-        color: "black",
+        color: "grey",
     }
 
     const R = {
@@ -114,10 +114,6 @@ function HomepageCalendar() {
 
     return (
         <SafeAreaView style={styles.container}>
-
-            <Text style={styles.titleStyle}>
-                Dis Da Homepage
-            </Text>
 
             <SafeAreaView>
                 <Calendar
