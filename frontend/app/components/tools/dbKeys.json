@@ -1,3 +1,6 @@
 {
-    "DisposalEntry": "disposal_entry"
+    "DisposalEntry": "disposal_entry",
+    "items": [
+        {"name": "apple", "recommended": "compost"}
+    ]
 }
