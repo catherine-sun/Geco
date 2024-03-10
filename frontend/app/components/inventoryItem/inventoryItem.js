@@ -61,7 +61,7 @@ const styles = StyleSheet.create({
     fontSize: 20
   },
   picker: {
-    borderRadius: '18px',
+    // borderRadius: '18px',
     top: -100,
     height: 30, 
     width: 145,
