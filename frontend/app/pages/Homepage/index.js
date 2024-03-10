@@ -15,9 +15,8 @@ function Homepage() {
             <Text style={styles.titleStyle}>
                 Dis Da Homepage
             </Text>
-
-            <DisplayButtons currentPath='Homepage' />
             <TrackedGraphs/>
+            <DisplayButtons currentPath='Homepage' />
         </SafeAreaView>
     )
 

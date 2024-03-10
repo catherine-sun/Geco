@@ -135,119 +135,6 @@ const TrackedGraphs = ({itemType = "bags"}) => {
         
     }
 
-    /* 
-    const lines = [
-        {
-            colour: "blue",
-            data: [
-                {
-                    x: 3,
-                    y: 6
-                },
-                {
-                    x: 20,
-                    y: 26
-                },
-                {
-                    x: 31,
-                    y: 26
-                },
-                {
-                    x: 37,
-                    y: 64
-                },
-                {
-                    x: 43,
-                    y: 36
-                },
-                {
-                    x: 47,
-                    y: 76
-                },
-
-            ]
-        },
-        {
-            colour: "green",
-            data: [
-                {
-                    x: 3,
-                    y: 16
-                },
-                {
-                    x: 14,
-                    y: 26
-                },
-                {
-                    x: 21,
-                    y: 16
-                },
-                {
-                    x: 27,
-                    y: 64
-                },
-                {
-                    x: 40,
-                    y: 36
-                },
-                {
-                    x: 47,
-                    y: 46
-                },
-
-            ]
-        },
-        {
-            colour: "black",
-            data: [
-                {
-                    x: 3,
-                    y: 46
-                },
-                {
-                    x: 4,
-                    y: 26
-                },
-                {
-                    x: 21,
-                    y: 43
-                },
-                {
-                    x: 27,
-                    y: 24
-                },
-                {
-                    x: 40,
-                    y: 16
-                },
-                {
-                    x: 47,
-                    y: 36
-                },
-
-            ]
-        }
-    ]
-
-    const sections = [
-        {
-            title: "WASTE",
-            colour: "green",
-            value: 60
-        },
-        {
-            title: "RECYCLE",
-            colour: "blue",
-            value: 90
-        },
-        {
-            title: "GARBAGE",
-            colour: "grey",
-            value: 90
-        }
-    ]
-    */
-
     useEffect(() => {
         compileGraphData()
     }, [])
@@ -279,7 +166,7 @@ const TrackedGraphs = ({itemType = "bags"}) => {
                     <View key="piechart" style={styles.graphContainer}>
                         <PieChart
                             width={Math.min(width * 0.8, 400)}
-                            height={Math.min(width * 0.7, 400)}
+                            height={Math.min(width * 0.6, 400)}
                             paddingHeight={30}
                             paddingWidth={30}
                             title={`${fromDate} to ${toDate}`}
@@ -292,10 +179,10 @@ const TrackedGraphs = ({itemType = "bags"}) => {
                 <View key="linegraph" style={styles.graphContainer}>
                     <LineGraph 
                         width={Math.min(width * 0.8, 400)}
-                        height={Math.min(width * 0.7, 400)}
+                        height={Math.min(width * 0.5, 400)}
                         title={`${fromDate} to ${toDate}`}
-                        paddingHeight={30}
-                        paddingWidth={30}
+                        paddingHeight={width * 0.05}
+                        paddingWidth={width * 0.08}
                         xAxisLabel={""}
                         yAxisLabel={""}
                         xAxisType={"date"}
