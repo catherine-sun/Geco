@@ -36,7 +36,7 @@ export const updateData = async (
     try {
         await AsyncStorage.mergeItem(
             key,
-            item,
+           JSON.parse(item),
             onError
         )
     } catch (e) {
