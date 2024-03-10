@@ -1,11 +1,10 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
-import index from './app/pages/Homepage';
 
 export default function App() {
   return (
     <View style={styles.container}>
-      <index/>
+      <index />
       <StatusBar style="auto" />
     </View>
   );

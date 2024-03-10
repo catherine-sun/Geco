@@ -1,37 +1,26 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View, Pressable } from 'react-native';
-import { router } from 'expo-router';
+import React from 'react';
+import { SafeAreaView, Text } from 'react-native';
+
+import DisplayButtons from '../../components/DisplayButtons';
+import { styles } from './styles';
 
 function Inventory() {
     return (
-        <View>
-            <View>
-                <Text>How terrible of a human being have you been so far?</Text>
-                <Text>How much gar-bahj have you scanned that contributes to the death of this planet?</Text>
-            </View>
 
-            <Pressable onPress={() => router.replace("./Homepage")}>
-                <Text >Homepage</Text>
-            </Pressable>
+        <SafeAreaView style={styles.container}>
 
-            <Pressable onPress={() => router.replace("./Scanner")}>
-                <Text >Scanner</Text>
-            </Pressable>
+            <Text style={styles.titleStyle}>
+                How terrible of a human being have you been so far?
+            </Text>
+            <Text style={styles.titleStyle}>
+                How much gar-bahj have you scanned that contributes to the death of this planet?
+            </Text>
 
-            <Pressable onPress={() => router.replace("./ManualInput")}>
-                <Text >Manual Input</Text>
-            </Pressable>
+            <DisplayButtons currentPath='Inventory' />
 
-            <Pressable onPress={() => router.replace("./Links")}>
-                <Text >Links</Text>
-            </Pressable>
-
-            <Pressable onPress={() => router.replace("./About")}>
-                <Text >About Us</Text>
-            </Pressable>
-
-        </View>
+        </SafeAreaView>
     )
 
 }
 export default Inventory;
+
