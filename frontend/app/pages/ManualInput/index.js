@@ -19,7 +19,7 @@ function ManualInput() {
 
 
     const formatDate = (dateObj) => {
-        const month = (dateObj.getUTCMonth()).toString().padStart(2, "0");
+        const month = (dateObj.getUTCMonth()+1).toString().padStart(2, "0");
         const day = (dateObj.getUTCDate()).toString().padStart(2, "0");
         const year = dateObj.getUTCFullYear();
         return `${year}-${month}-${day}`;
@@ -69,7 +69,7 @@ function ManualInput() {
         let itemFound = false;
 
         for (let i = 0; i < updatedArr.length; i++) {
-            if (updatedArr[i].date === date && updatedArr[i].name === waste) {
+            if (updatedArr[i].date === formattedDate && updatedArr[i].name === waste) {
                 updatedArr[i][selectedSize.toLowerCase()] = Number(updatedArr[i][selectedSize.toLowerCase()]) + Number(number);
                 console.log('item found', updatedArr[i][selectedSize.toLowerCase()], selectedSize.toLowerCase());
                 itemFound = true;
@@ -79,7 +79,7 @@ function ManualInput() {
 
         console.log('bags data', await tools.getData("bags"));
         if (!itemFound) {
-            updatedArr.push({ name: waste, date: date, small: 0, medium: 0, large: 0 });
+            updatedArr.push({ name: waste, date: formattedDate, small: 0, medium: 0, large: 0 });
 
             updatedArr[updatedArr.length - 1][selectedSize.toLowerCase()] = Number(updatedArr[updatedArr.length - 1][selectedSize.toLowerCase()]) + Number(number);
             console.log('item created', updatedArr, typeof (updatedArr[updatedArr.length - 1][selectedSize.toLowerCase()]), typeof (number), number, selectedSize.toLowerCase());
