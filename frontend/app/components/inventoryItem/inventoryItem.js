@@ -62,7 +62,7 @@ const styles = StyleSheet.create({
   },
   picker: {
     // borderRadius: '18px',
-    top: -100,
+    top: -30,
     height: 30, 
     width: 145,
     marginLeft: 'auto',
