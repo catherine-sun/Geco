@@ -4,6 +4,7 @@ import { SafeAreaView, Text } from 'react-native';
 
 import DisplayButtons from '../../components/DisplayButtons';
 import { styles } from './styles';
+import TrackedGraphs from '../../components/TrackedGraphs';
 
 
 function Homepage() {
@@ -14,9 +15,8 @@ function Homepage() {
             <Text style={styles.titleStyle}>
                 Dis Da Homepage
             </Text>
-
+            <TrackedGraphs/>
             <DisplayButtons currentPath='Homepage' />
-
         </SafeAreaView>
     )
 
