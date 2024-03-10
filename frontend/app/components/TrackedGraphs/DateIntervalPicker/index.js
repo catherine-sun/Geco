@@ -23,8 +23,8 @@ const DateIntervalPicker = ({startDate, endDate, setStartDate, setEndDate}) => {
                     <Text style={styles.btnDate}> {startDate}</Text></Text>
                 </Pressable>
                 <Pressable onPress={() => { setEndDateOpen(true); setStartDateOpen(false)}}>
-                <Text style={styles.btn} > to 
-                    <Text style={styles.btnDate}> {endDate}</Text></Text>                
+                <Text style={styles.btn} > to
+                    <Text style={styles.btnDate}> { endDate}</Text></Text>
                 </Pressable>
             </View>
             {
@@ -70,7 +70,7 @@ const DateIntervalPicker = ({startDate, endDate, setStartDate, setEndDate}) => {
                         />
                     </SafeAreaView>
             }
-        
+
         </View>
     )
 }
