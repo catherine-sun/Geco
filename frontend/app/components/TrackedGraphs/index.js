@@ -167,10 +167,10 @@ const TrackedGraphs = ({itemType = "bags"}) => {
                         <View key="piechart" style={styles.graphContainer}>
                             <PieChart
                                 key="pieChartComp"
-                                width={Math.min(width * 0.8, 400)}
+                                width={Math.min(width * 0.85, 400)}
                                 height={Math.min(width * 0.6, 400)}
-                                paddingHeight={30}
-                                paddingWidth={30}
+                                paddingHeight={width * 0.08}
+                                paddingWidth={width * 0.1}
                                 title={`${fromDate} to ${toDate}`}
                                 data={pieChartData}
                             />
@@ -180,7 +180,7 @@ const TrackedGraphs = ({itemType = "bags"}) => {
                     lineGraphData && lineGraphData.length > 0 &&
                     <View key="linegraph" style={styles.graphContainer}>
                         <LineGraph 
-                            width={Math.min(width * 0.82, 400)}
+                            width={Math.min(width * 0.9, 400)}
                             height={Math.min(width * 0.5, 400)}
                             title={`${fromDate} to ${toDate}`}
                             paddingHeight={width * 0.08}

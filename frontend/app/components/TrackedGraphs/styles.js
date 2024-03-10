@@ -2,7 +2,6 @@ import { StyleSheet } from "react-native";
 
 const styles = StyleSheet.create({
     root: {
-        width: "80%",
         margin: 10,
         flex: 1,
     },
@@ -11,7 +10,9 @@ const styles = StyleSheet.create({
         borderWidth: 3,
         borderRadius: 15,
         marginTop: 10,
-        width: "100%"
+        width: "100%",
+        display: "flex",
+        justifyContent: "center"
     },
     noDataContainer: {
         backgroundColor: "#D9D9D9",

@@ -48,7 +48,7 @@ const LineGraph = ({
                             strokeWidth={3}
                             x1={paddingWidth - 3}
                             y1={height - paddingHeight}
-                            x2={width - paddingWidth - 3}
+                            x2={width - paddingWidth}
                             y2={height - paddingHeight}
                             strokeLinecap="round"
                         />
