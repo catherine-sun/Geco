@@ -6,11 +6,11 @@ const styles = StyleSheet.create({
         margin: 10
     },
     graphContainer: {
-        backgroundColor: "#D9D9D9",
-        maxWidth: 400,
+        borderColor: "#D9D9D9",
+        borderWidth: 3,
         borderRadius: 15,
         marginTop: 10,
-
+        width: "100%"
     },
     noDataContainer: {
         backgroundColor: "#D9D9D9",

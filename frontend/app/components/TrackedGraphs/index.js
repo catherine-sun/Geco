@@ -165,6 +165,7 @@ const TrackedGraphs = ({itemType = "bags"}) => {
                 pieChartData &&  pieChartData.length > 0 &&
                     <View key="piechart" style={styles.graphContainer}>
                         <PieChart
+                            key="pieChartComp"
                             width={Math.min(width * 0.8, 400)}
                             height={Math.min(width * 0.6, 400)}
                             paddingHeight={30}
@@ -178,11 +179,11 @@ const TrackedGraphs = ({itemType = "bags"}) => {
                 lineGraphData && lineGraphData.length > 0 &&
                 <View key="linegraph" style={styles.graphContainer}>
                     <LineGraph 
-                        width={Math.min(width * 0.8, 400)}
+                        width={Math.min(width * 0.82, 400)}
                         height={Math.min(width * 0.5, 400)}
                         title={`${fromDate} to ${toDate}`}
-                        paddingHeight={width * 0.05}
-                        paddingWidth={width * 0.08}
+                        paddingHeight={width * 0.08}
+                        paddingWidth={width * 0.1}
                         xAxisLabel={""}
                         yAxisLabel={""}
                         xAxisType={"date"}

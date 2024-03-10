@@ -30,13 +30,13 @@ const LineGraph = ({
             >
                 {
                     graphProps &&
-                    <G >
+                    <G translate={[-9, 0]}>
                         {/* TITLE */}
                         <SvgText
                             fill="grey"
                             fontWeight={"bold"}
                             x={width / 2}
-                            y={2 * paddingHeight / 3}
+                            y={3 * paddingHeight / 4}
                             textAnchor={"middle"}
                             fontFamily="Arial"
                         >
@@ -44,11 +44,11 @@ const LineGraph = ({
                         </SvgText>
                         {/* xAxis */}
                         <Line
-                            stroke={"grey"}
+                            stroke={"#a6a6a6"}
                             strokeWidth={3}
-                            x1={paddingWidth}
+                            x1={paddingWidth - 3}
                             y1={height - paddingHeight}
-                            x2={width - paddingWidth}
+                            x2={width - paddingWidth - 3}
                             y2={height - paddingHeight}
                             strokeLinecap="round"
                         />
@@ -65,11 +65,11 @@ const LineGraph = ({
                         </SvgText>
                         {/* yAxis */}
                         <Line
-                            stroke={"grey"}
+                            stroke={"#a6a6a6"}
                             strokeWidth={3}
-                            x1={paddingWidth}
+                            x1={paddingWidth - 3}
                             y1={paddingHeight}
-                            x2={paddingWidth}
+                            x2={paddingWidth - 3}
                             y2={height - paddingHeight}
                             strokeLinecap="round"
                         />

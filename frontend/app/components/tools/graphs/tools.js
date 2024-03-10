@@ -50,7 +50,7 @@ export class GraphConstructor {
             minX, 
             maxX,
             0,
-            width - 2 * paddingWidth
+            width - 2 * paddingWidth - 6
         )
 
         const yAxisScale = d3.scaleLinear()

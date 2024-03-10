@@ -44,7 +44,7 @@ const styles = StyleSheet.create({
         alignItems: "center",
         justifyContent: "center",
         position: "fixed",
-        bottom: 0,
+        bottom: -400,
         height: 400
     },
     pickerHeader: {
