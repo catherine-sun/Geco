@@ -10,27 +10,6 @@ function About() {
             <View style={{display: "flex", alignItems: "center", justifyContent: "center"}}>
                 <Image style={{height: 50, width: 100, objectFit: "contain"}} source={require('../../../assets/geco_logo.jpg')}/>
             </View>
-            <Text style={styles.titleStyle}>
-                About GECO
-            </Text>
-            <Text style={styles.titleStyle}>
-                Here's why we're morally superior to you
-            </Text>
-
-            <Text style={styles.textStyle}>
-                Catherine Sun, the lonely tuatara
-            </Text>
-            <Text style={styles.textStyle}>
-                Christine Zhao, the veiled chameleon
-            </Text>
-            <Text style={styles.textStyle}>
-                Clare Zhu, the arabian sand boa
-            </Text>
-            <Text style={styles.textStyle}>
-                Rachel Kwan, the rhinoceros iguana
-            </Text>
-
-
             <ScrollView style={styles.scroll}>
                 <Text style={{
                     fontSize: 38,
@@ -121,8 +100,9 @@ function About() {
                 <Text style={styles.textStyle}>
                     Rachel Kwan, the rhinoceros iguana
                 </Text>
-            </ScrollView>
+                <Text style={{height:70}}></Text>
 
+            </ScrollView>
 
             <DisplayButtons currentPath='About' />
 
