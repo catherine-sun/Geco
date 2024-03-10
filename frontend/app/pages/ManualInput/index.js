@@ -99,6 +99,7 @@ function ManualInput() {
         <View style={styles.body}>
             <ScrollView>
                 <View style={styles.container}>
+                    <Text style={{ fontWeight: "bold", fontSize: 30, marginTop: 20,}}>Log Disposed Bins</Text>
                     <Text style={styles.header}>Select Bin</Text>
 
                     <View style={styles.buttonContainer}>
@@ -179,8 +180,8 @@ const styles = StyleSheet.create({
         height: 'auto',
     },
     header: {
-        fontSize: 25,
-        height: 50,
+        fontSize: 20,
+        height: 40,
         marginTop: 20,
     },
     buttonContainer: {

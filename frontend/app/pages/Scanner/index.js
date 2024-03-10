@@ -13,7 +13,7 @@ function Scanner() {
         <SafeAreaView style={styles.container}>
 
             <Text style={styles.titleStyle}>
-                Make Camera Work Good
+                Scan A Photo For Disposal Recommendations
             </Text>
 
             <PhotoSelect image={image} setImage={setImage} onSelect={() => {}}/>

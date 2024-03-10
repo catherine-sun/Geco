@@ -59,7 +59,7 @@ const Inventory = () => {
     return (
         <SafeAreaView style={styles.container}>
             <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center', overflow: 'hidden' }}>
-                <Text style={{ fontSize: 40 }}>Inventory</Text>
+                <Text style={{ marginTop:10,fontSize: 30, fontWeight: "bold" }}>Inventory</Text>
                 <ScrollView style={{ width: '100%', overflowY: 'scroll', boxSizing: 'content-box' }}>
                     {/* <Text>How much gar-bahj have you scanned that contributes to the death of this planet?</Text> */}
                     {/* {console.log('items inside index:', items)} */}
@@ -71,6 +71,7 @@ const Inventory = () => {
                             </View>
                         )
                     })}
+                    <View style={{height: 80}}></View>
                 </ScrollView>
             </View>
             <DisplayButtons currentPath='Inventory' />

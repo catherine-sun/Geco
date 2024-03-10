@@ -15,7 +15,7 @@ function Homepage() {
         <SafeAreaView style={styles.container}>
             <ScrollView style={styles.scrollContainer}>
                 <Text style={styles.titleStyle}>
-                    Dis Da Homepage
+                    GECO
                 </Text>
                 <View>
                     <Text style={styles.sectionHeader}>Logs Calendar</Text>
@@ -27,6 +27,7 @@ function Homepage() {
 
                     <TrackedGraphs/>
                 </View>
+                <View style={{height: 40}}></View>
             </ScrollView>
         <DisplayButtons currentPath='Homepage' />
         </SafeAreaView>
