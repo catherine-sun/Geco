@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { ScrollView, SafeAreaView, View, Text } from 'react-native';
+import { ScrollView, Image, SafeAreaView, View, Text } from 'react-native';
 import { Divider } from '@rneui/base';
 import HomepageCalendar from '../../components/HomepageCalendar';
 import DisplayButtons from '../../components/DisplayButtons';
@@ -14,8 +14,11 @@ function Homepage() {
     return(
         <SafeAreaView style={styles.container}>
             <ScrollView style={styles.scrollContainer}>
+                <View style={{display: "flex", alignItems: "center", justifyContent: "center"}}>
+                    <Image style={styles.logo} source={require('../../../assets/geco_logo.jpg')}/>
+                </View>
                 <Text style={styles.titleStyle}>
-                    GECO
+                    <Text>Home</Text>
                 </Text>
                 <View>
                     <Text style={styles.sectionHeader}>Logs Calendar</Text>
