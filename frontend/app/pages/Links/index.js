@@ -1,5 +1,5 @@
 import React from 'react';
-import { Text, SafeAreaView, Button, View, Image} from 'react-native';
+import { Text, SafeAreaView, Pressable, View, Image} from 'react-native';
 import { openBrowserAsync} from 'expo-web-browser';
 
 import DisplayButtons from '../../components/DisplayButtons';
