@@ -33,19 +33,24 @@ const LineGraph = ({
                     <G >
                         {/* TITLE */}
                         <SvgText
+                            fill="grey"
+                            fontWeight={"bold"}
                             x={width / 2}
-                            y={paddingHeight / 2}
+                            y={2 * paddingHeight / 3}
                             textAnchor={"middle"}
+                            fontFamily="Arial"
                         >
                             {title}
                         </SvgText>
                         {/* xAxis */}
                         <Line
-                            stroke={"black"}
+                            stroke={"grey"}
+                            strokeWidth={3}
                             x1={paddingWidth}
                             y1={height - paddingHeight}
                             x2={width - paddingWidth}
                             y2={height - paddingHeight}
+                            strokeLinecap="round"
                         />
                         {
                             graphProps.xAxis.buildTicks()
@@ -60,11 +65,13 @@ const LineGraph = ({
                         </SvgText>
                         {/* yAxis */}
                         <Line
-                            stroke={"black"}
+                            stroke={"grey"}
+                            strokeWidth={3}
                             x1={paddingWidth}
                             y1={paddingHeight}
                             x2={paddingWidth}
                             y2={height - paddingHeight}
+                            strokeLinecap="round"
                         />
                         <SvgText
                             x={width / 2}
@@ -78,9 +85,10 @@ const LineGraph = ({
                                 <Path
                                     key={line.d}
                                     stroke={line.colour}
-                                    strokeWidth={2}
+                                    strokeWidth={3}
                                     fill={"transparent"}
                                     d={line.d}
+                                    strokeLinecap="round"
                                 />
                             ))
                         }

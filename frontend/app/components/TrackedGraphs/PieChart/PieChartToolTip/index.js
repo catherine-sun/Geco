@@ -1,17 +1,19 @@
-import { Modal } from "react-native"
-import { Tooltip } from '@rneui/themed';
+import { Modal, View } from "react-native"
+import { Tooltip, Text } from '@rneui/themed';
+import styles from "./styles";
 
-const PieChartToolTip = ({visible, onClose, style, content}) => {
+const PieChartToolTip = ({visible, onClose, myStyle, content}) => {
 
 
     return (
         <Tooltip 
             withPointer={false}
-            containerStyle={style}
-            ModalComponent={Modal}
+            containerStyle={myStyle}
             onClose={onClose}
             visible={visible} 
-            popover={content}
+            width={230}
+            popover={content
+            }
         />
     )
 }

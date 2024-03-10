@@ -2,8 +2,8 @@ import { View, Text, Pressable } from "react-native"
 import { Svg, G, Line, Path, Text as SvgText, Circle } from "react-native-svg"
 import { useState, useEffect } from "react"
 import { GraphConstructor } from "../../tools/graphs/tools";
-import { TouchableOpacity } from "react-native";
 import PieChartToolTip from "./PieChartToolTip";
+import { TouchableOpacity } from "react-native";
 import styles from "./styles";
 
 const PieChart = ({
@@ -18,7 +18,7 @@ const PieChart = ({
     const [graphProps, setGraphProps] = useState(null)
     const [openTooltip, setOpenTooltip] = useState(null)
     const [toolTipPos, setTooltipPos] = useState([200,10])
-
+    const [toolTipPositions, setTooltipPositions] = useState({})
     const graphBuilder = new GraphConstructor()
 
     
@@ -27,24 +27,26 @@ const PieChart = ({
             paddingHeight, sections: data}))
     }, [data])
 
-    const setTooltipLayout = (t, e) => {
-        const {x, y, width, height} = e.nativeEvent.layout;
+    const setTooltipLayout = (t, x, y) => {
+        //const {x, y, width, height} = e.nativeEvent.layout;
         console.log(t)
-        console.log(e.nativeEvent.layout)
+        setTooltipPositions({...toolTipPositions, [t]: [x, y]})
     }
 
     return (
         <View>
-            <TouchableOpacity onPress={(e) => {console.log(e); setTooltipPos([e.nativeEvent.pageX, e.nativeEvent.pageY])}}>
                 <Svg width={width} height={height}>
                     {
                         graphProps &&
                         <G width={width} height={height}>
                             {/* TITLE */}
                             <SvgText
+                                fill="grey"
                                 x={width / 2}
-                                y={paddingHeight / 2}
+                                y={2 * paddingHeight / 3}
                                 textAnchor={"middle"}
+                                fontWeight={"bold"}
+                                fontFamily="Arial"
                             >
                                 {title}
                             </SvgText>
@@ -52,15 +54,16 @@ const PieChart = ({
                                 graphProps.sections && graphProps.sections.map(section => (
                                     <>
                                         <Path
-                                            onLayout={(e) => setTooltipLayout(section.title, e)}
                                             id={`${section.title}-arc`}
-                                            onClick={() => { 
+                                            onClick={(e) => { 
+                                                setTooltipLayout(section.title, e.nativeEvent.pageX, e.nativeEvent.pageY)
                                                 console.log(section.title); setOpenTooltip(section.title)}
                                             }
-                                            onPress={() => { 
-                                                console.log(section.title); setOpenTooltip(section.title)}
+                                            onPress={(e) => { 
+                                                setTooltipLayout(section.title, e.nativeEvent.pageX, e.nativeEvent.pageY)
+                                                console.log("press onclick" + section.title); setOpenTooltip(section.title)}
                                             }
-                                            key={section.colour}
+                                            key={section.colour + section.title}
                                             fill={section.colour}
                                             d={section.d}
                                             translate={[width/2, height/2]}
@@ -75,34 +78,37 @@ const PieChart = ({
                     }
                 </Svg>
                 {
-                graphProps && graphProps.sections && graphProps.sections.map(
+                graphProps && graphProps.sections &&
+                    graphProps.sections.map(
                     section => (
                         <>
                             <PieChartToolTip 
+                                key={`${section.title}-${section.value}`}
                                 visible={openTooltip == section.title}
                                 onClose={() => setOpenTooltip(null)}
-                                style={{
+                                myStyle={{
                                     position: "fixed",
-                                    top: toolTipPos[1],
-                                    left: toolTipPos[0],
+                                    top: toolTipPositions[section.title] ? toolTipPositions[section.title][1] : 100,
+                                    left: toolTipPositions[section.title] ? toolTipPositions[section.title][0] : 100,
                                     color: "white",
                                     backgroundColor: section.colour,
-                                    border: "3px solid"
+                                    borderWidth: 3,
+                                    borderColor: "white",
+                                    maxWidth: 130
                                 }}
-                                width={100}
                                 content={
-                                    <View>
-                                        <Text style={styles.tooltipContent}>
-                                            {`${section.title}`} - {section.value}
-                                        </Text>
-                                    </View>
+                                    <Text 
+                                        key={`${section.title}-${section.value}-text`} 
+                                        style={styles.tooltipContent}
+                                    >
+                                        {section.title} - {section.value}
+                                    </Text>
                                 }
                             />
                         </>
                     )
                 )
             }
-            </TouchableOpacity>
         </View>
     )
 }

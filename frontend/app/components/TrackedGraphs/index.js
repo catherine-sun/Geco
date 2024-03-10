@@ -6,7 +6,7 @@ import PieChart from "./PieChart"
 import DateIntervalPicker from "./DateIntervalPicker"
 import styles from "./styles"
 import dayjs from "dayjs"
-const TrackedGraphs = () => {
+const TrackedGraphs = ({itemType = "bags"}) => {
     
     const { height, width } = useWindowDimensions();
     const [lineGraphData, setLineGraphData] = useState(null)
@@ -18,7 +18,9 @@ const TrackedGraphs = () => {
 
         console.log("Compiling data")
 
-        const items =  [
+        let items;
+
+        const itemItems =  [
             { name: "Apple", recommended: "Compost", trashedAt: "Compost", date: "2020-02-14" },
             { name: "Battery", recommended: "Trash", trashedAt: "Trash", date: "2020-02-14" },
             { name: "Oranges", recommended: "Compost", trashedAt: "Trash", date: "2020-02-14" },
@@ -41,6 +43,58 @@ const TrackedGraphs = () => {
             { name: "Granola", recommended: "Trash", trashedAt: "Recycle", date: "2024-02-25" }
         ] 
 
+        
+        const bagItems = [
+            {name: "Trash", date: "2024-03-01", small: 0, medium: 0, large: 3},
+            {name: "Compost", date: "2024-03-01", small: 0, medium: 1, large: 0},
+            {name: "Trash", date: "2024-03-03", small: 1, medium: 0, large: 0},
+            {name: "Recycling", date: "2024-03-03", small: 1, medium: 0, large: 0},
+            {name: "Compost", date: "2024-03-03", small: 1, medium: 0, large: 0},
+            {name: "Trash", date: "2024-03-05", small: 0, medium: 1, large:0},
+            {name: "Recycling", date: "2024-03-06", small: 0, medium: 0, large: 2},
+            {name: "Trash", date: "2024-03-08", small: 1, medium: 2, large: 0},
+            {name: "Compost", date: "2024-03-08", small: 1, medium: 0, large: 0},
+            {name: "Compost", date: "2024-03-09", small: 0, medium: 0, large: 2},
+            {name: "Recycling", date: "2024-03-09", small:0, medium: 2, large: 1}
+        ]
+
+        if (itemType == "bags") {
+            const it = []
+            bagItems.forEach(
+                b => {
+                    for (let i = 0; i < b.small; i++) {
+                        it.push({
+                            ...b,
+                            trashedAt: b.name
+                        })
+                    }
+
+                    for (let i = 0; i < b.medium; i++) {
+                        for (let j = 0; j < 3; j++){
+                            it.push({
+                                ...b,
+                                trashedAt: b.name
+                            })
+                        }
+                    }
+
+                    for (let i = 0; i < b.large; i++) {
+                        for (let j = 0; j < 6; j++){
+                            it.push({
+                                ...b,
+                                trashedAt: b.name
+                            })
+                        }
+                    }
+                }
+            )
+            items = it
+        } else {
+            items = itemItems
+        }
+
+        console.log("items")
+        console.log(items)
         let trashedItems = items.filter(i => i.trashedAt && i.date >= fromDate && i.date <= toDate)
 
         trashedItems.sort((a, b) => a.date > b.date ? 1 : -1)
@@ -204,8 +258,7 @@ const TrackedGraphs = () => {
 
     return (
         <View style={styles.root}>
-            <Text>Tracked Graphs {width} {height}</Text>
-            <View>
+            <View key="3434543636">
                 <DateIntervalPicker
                     startDate={fromDate}
                     setStartDate={setFromDate}
@@ -214,29 +267,42 @@ const TrackedGraphs = () => {
                 />
             </View>
             {
-                pieChartData &&
-                <View style={styles.graphContainer}>
-                    <PieChart
-                        width={Math.min(width * 0.8, 400)}
-                        height={Math.min(width * 0.7, 400)}
-                        title={`${fromDate} to ${toDate}`}
-                        data={pieChartData}
-                    />
-                </View>
+                pieChartData && pieChartData.length == 0 &&
+                (
+                    <View style={styles.noDataContainer}>
+                        <Text style={styles.noDataContainerText}>No data from {fromDate} to {toDate}. Select dates with logged entries to view your visualizations.</Text>
+                    </View>
+                )
             }
             {
-                lineGraphData &&
-                <View style={styles.graphContainer}>
+                pieChartData &&  pieChartData.length > 0 &&
+                    <View key="piechart" style={styles.graphContainer}>
+                        <PieChart
+                            width={Math.min(width * 0.8, 400)}
+                            height={Math.min(width * 0.7, 400)}
+                            paddingHeight={30}
+                            paddingWidth={30}
+                            title={`${fromDate} to ${toDate}`}
+                            data={pieChartData}
+                        />
+                    </View>
+            }
+            {
+                lineGraphData && lineGraphData.length > 0 &&
+                <View key="linegraph" style={styles.graphContainer}>
                     <LineGraph 
                         width={Math.min(width * 0.8, 400)}
                         height={Math.min(width * 0.7, 400)}
                         title={`${fromDate} to ${toDate}`}
-                        xAxisLabel={"X AXIS"}
-                        yAxisLabel={"Y AXIS"}
+                        paddingHeight={30}
+                        paddingWidth={30}
+                        xAxisLabel={""}
+                        yAxisLabel={""}
                         xAxisType={"date"}
                         data={lineGraphData}
                     />
                 </View>
+               
             }
         </View>
     )

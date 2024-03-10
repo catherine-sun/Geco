@@ -3,7 +3,8 @@ import * as d3 from "d3";
 export const disposalTypeToColour = {
     "Compost": "green",
     "Recycle": "blue",
-    "Trash": "grey"
+    "Trash": "grey",
+    "Recycling": "blue"
 }
 
 export class GraphConstructor {
@@ -74,6 +75,7 @@ export class GraphConstructor {
             const graphLine = d3.line()
                 .x(d => xAxisScale(d.x) + paddingWidth)
                 .y(d => yAxisScale(d.y) + paddingHeight)
+                .curve(d3.curveCardinal.tension(0.4))
             
                 
             obj.lines.push({
