@@ -4,14 +4,17 @@ import { useState } from "react"
 import dayjs from 'dayjs';
 import styles from "./styles"
 
+const today = new Date(Date.now())
+
 const DateIntervalPicker = ({startDate, endDate, setStartDate, setEndDate}) => {
+
 
     const [startDateOpen, setStartDateOpen] = useState(false)
     const [endDateOpen, setEndDateOpen] = useState(false)
 
     const [startDateVal, setStartDateVal] = useState(new Date(Date.now() - 5000))
     const [endDateVal, setEndDateVal] = useState(new Date(Date.now()))
-
+    
     return (
         <View style={styles.root}>
             <Text style={styles.header}>Visualizations</Text>
@@ -41,6 +44,7 @@ const DateIntervalPicker = ({startDate, endDate, setStartDate, setEndDate}) => {
                             }
                         }}
                         mode="date"
+                        maximumDate={endDateVal}
                     />
                 </SafeAreaView>
             }
@@ -56,8 +60,13 @@ const DateIntervalPicker = ({startDate, endDate, setStartDate, setEndDate}) => {
                                     setEndDateVal(s)
                                     setEndDate(dayjs(s).format("YYYY-MM-DD"))
                                     setEndDateOpen(false)
+                                    if (s < startDateVal) {
+                                        setStartDateVal(s)
+                                        setStartDate(dayjs(s).format("YYYY-MM-DD"))
+                                    }
                                 }                    
                             }}
+                            maximumDate={today}
                             mode="date"
                         />
                     </SafeAreaView>
