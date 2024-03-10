@@ -34,12 +34,15 @@ export const updateData = async (
     onError = () => {}
 ) => {
     try {
+        console.log('inside async storage', await AsyncStorage.getItem("item"));
+
         await AsyncStorage.mergeItem(
             key,
-            item,
+            JSON.stringify(item),
             onError
         )
     } catch (e) {
+        console.log('err', e);
         onError();
     }
 }
