@@ -102,7 +102,7 @@ function ManualInput() {
                     <View style={{display: "flex", alignItems: "center", marginTop: 5, justifyContent: "center"}}>
                         <Image style={{height: 50, width: 100, objectFit: "contain"}} source={require('../../../assets/geco_logo.jpg')}/>
                     </View>
-                    <Text style={{ fontWeight: "bold", fontSize: 30 }}>Log Disposed Bins</Text>
+                    <Text style={{ fontWeight: "bold", fontSize: 30, marginTop: 5 }}>Log Disposed Bins</Text>
                     <Text style={styles.header}>Select Bin</Text>
 
                     <View style={styles.buttonContainer}>
