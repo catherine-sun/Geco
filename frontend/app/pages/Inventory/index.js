@@ -62,7 +62,7 @@ const Inventory = () => {
                 <View style={{display: "flex", alignItems: "center", justifyContent: "center"}}>
                     <Image style={{height: 50, width: 100, objectFit: "contain"}} source={require('../../../assets/geco_logo.jpg')}/>
                 </View>
-                <Text style={{ marginTop:10,fontSize: 30, fontWeight: "bold" }}>Inventory</Text>
+                <Text style={{ marginTop:10,fontSize: 28, fontWeight: "bold" }}>Inventory</Text>
                 <ScrollView style={{ width: '100%', overflowY: 'scroll', boxSizing: 'content-box' }}>
                     {/* <Text>How much gar-bahj have you scanned that contributes to the death of this planet?</Text> */}
                     {/* {console.log('items inside index:', items)} */}
