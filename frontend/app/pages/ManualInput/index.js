@@ -15,6 +15,8 @@ function ManualInput() {
     const [numBags, setNumBags] = useState(0);
     const [waste, setWaste] = useState('Trash');
     const [saved, setSaved] = useState(false);
+    const [show, setShow] = useState(false);
+
 
     const formatDate = (dateObj) => {
         const month = (dateObj.getUTCMonth()).toString().padStart(2, "0");
@@ -57,6 +59,7 @@ function ManualInput() {
         const currentDate = selectedDate;
         console.log('date', currentDate);
         setDate(currentDate);
+        setShow(false);
     };
 
     const saveData = async (date, waste, number, selectedSize) => {
@@ -133,13 +136,14 @@ function ManualInput() {
                     </Picker>
 
                     <Text style={styles.header}>Date</Text>
-                    <DateTimePicker
+                    <Button onPress={() => setShow(true)} title="Show date picker!" />
+                    {show && (<DateTimePicker
                         testID="dateTimePicker"
                         value={date}
                         mode={"date"}
                         is24Hour={true}
                         onChange={onChange}
-                    />
+                    />)}
 
                     <View style={styles.saveButtonContainer}>
                         <Button style={styles.saveButton} title="Save And Add Another" onPress={() => { saveData(date, waste, number, selectedSize); setSaved(true); }} />
