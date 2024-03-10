@@ -13,31 +13,37 @@ function DisplayButtons({currentPath}) {
 
     const buttonProps = {
         'Homepage': {
+            key: 'Homepage',
             color: '#01144d',
             title: 'Home Page',
             icon: 'house',
         },
         'Scanner': {
+            key: 'Scanner',
             color: '#015092',
             title: 'AI Scanner',
             icon: 'camera',
         },
         'Inventory': {
+            key: 'Inventory',
             color: '#029fda',
             title: 'Inventory',
             icon: 'list-check',
         },
         'ManualInput': {
+            key: 'ManualInput',
             color: '#02dad3',
             title: 'Add Bags Manually',
             icon: 'add',
         },
         'Links': {
+            key: 'Links',
             color: '#02da7b',
             title: 'Informative Links',
             icon: 'link',
         },
         'About': {
+            key: 'About',
             color: '#07ca04',
             title: 'About Us',
             icon: 'dragon',

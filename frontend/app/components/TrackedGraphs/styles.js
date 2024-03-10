@@ -2,15 +2,17 @@ import { StyleSheet } from "react-native";
 
 const styles = StyleSheet.create({
     root: {
-        width: "80%",
-        margin: 10
+        margin: 10,
+        flex: 1,
     },
     graphContainer: {
-        backgroundColor: "#D9D9D9",
-        maxWidth: 400,
+        borderColor: "grey",
+        borderWidth: 1,
         borderRadius: 15,
         marginTop: 10,
-
+        width: "100%",
+        display: "flex",
+        justifyContent: "center"
     },
     noDataContainer: {
         backgroundColor: "#D9D9D9",

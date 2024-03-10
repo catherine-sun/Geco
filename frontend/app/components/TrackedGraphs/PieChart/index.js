@@ -43,7 +43,7 @@ const PieChart = ({
                             <SvgText
                                 fill="grey"
                                 x={width / 2}
-                                y={2 * paddingHeight / 3}
+                                y={3 * paddingHeight / 4}
                                 textAnchor={"middle"}
                                 fontWeight={"bold"}
                                 fontFamily="Arial"
@@ -66,7 +66,7 @@ const PieChart = ({
                                             key={section.colour + section.title}
                                             fill={section.colour}
                                             d={section.d}
-                                            translate={[width/2, height/2]}
+                                            translate={[width/2 - 6, height/2 + paddingHeight / 3]}
                                             strokeWidth={3}
                                             stroke={"white"}
                                         />
