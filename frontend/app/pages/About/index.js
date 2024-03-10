@@ -1,36 +1,37 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View, Pressable } from 'react-native';
-import { router } from 'expo-router';
+import React from 'react';
+import { Text, SafeAreaView} from 'react-native';
+
+import DisplayButtons from '../../components/DisplayButtons';
+import { styles } from './styles';
 
 function About() {
+
     return (
-        <View>
-            <View>
-                <Text>Listen to us toot our own horns.</Text>
-                <Text>Here's why we're morally superior to you</Text>
-            </View>
+        <SafeAreaView style={styles.container}>
 
-            <Pressable onPress={() => router.replace("./Homepage")}>
-                <Text >Homepage</Text>
-            </Pressable>
+            <Text style={styles.titleStyle}>
+                Listen to us toot our own horns.
+            </Text>
+            <Text style={styles.titleStyle}>
+                Here's why we're morally superior to you
+            </Text>
 
-            <Pressable onPress={() => router.replace("./Scanner")}>
-                <Text >Scanner</Text>
-            </Pressable>
+            <Text style={styles.textStyle}>
+                Catherine Sun, the lonely tuatara
+            </Text>
+            <Text style={styles.textStyle}>
+                Christine Zhao, the veiled chameleon
+            </Text>
+            <Text style={styles.textStyle}>
+                Clare Zhu, the arabian sand boa
+            </Text>
+            <Text style={styles.textStyle}>
+                Rachel Kwan, the rhinoceros iguana
+            </Text>
 
-            <Pressable onPress={() => router.replace("./Inventory")}>
-                <Text >Inventory</Text>
-            </Pressable>
+            <DisplayButtons currentPath='About' />
 
-            <Pressable onPress={() => router.replace("./ManualInput")}>
-                <Text >Manual Input</Text>
-            </Pressable>
-
-            <Pressable onPress={() => router.replace("./Links")}>
-                <Text >Links</Text>
-            </Pressable>
-
-        </View>
+        </SafeAreaView>
     )
 
 }

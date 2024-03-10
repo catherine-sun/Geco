@@ -1,35 +1,22 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View, Pressable } from 'react-native';
-import { router } from 'expo-router';
+import React from 'react';
+import { Text, SafeAreaView} from 'react-native';
+
+import DisplayButtons from '../../components/DisplayButtons';
+import { styles } from './styles';
 
 function Scanner() {
+
     return (
-        <View>
-            <View>
-                <Text>Make camera work good</Text>
-            </View>
+        <SafeAreaView style={styles.container}>
 
-            <Pressable onPress={() => router.replace("./Homepage")}>
-                <Text >Homepage</Text>
-            </Pressable>
+            <Text style={styles.titleStyle}>
+                Make Camera Work Good
+            </Text>
 
-            <Pressable onPress={() => router.replace("./Inventory")}>
-                <Text >Inventory</Text>
-            </Pressable>
 
-            <Pressable onPress={() => router.replace("./ManualInput")}>
-                <Text >Manual Input</Text>
-            </Pressable>
+            <DisplayButtons currentPath='Scanner' />
 
-            <Pressable onPress={() => router.replace("./Links")}>
-                <Text >Links</Text>
-            </Pressable>
-
-            <Pressable onPress={() => router.replace("./About")}>
-                <Text >About Us</Text>
-            </Pressable>
-
-        </View>
+        </SafeAreaView>
     )
 
 }
